@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section{
+            width: 200px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+            <p>1. Persegi</p>
+            <p>2. Persegi Siku2 rata kiri</p>
+            <p>3. Persegi Siku2 rata kanan</p>
+            <p>Jenis Bangunan:</p>
+            <input type="text" id="jenisBangunan">
+            <p>Ukuran</p>
+            <input type="text" id="ukuran">
+            <br>
+            <input type="button" value="Lihat" onclick="printData()">
+            <p id="hasil"></p>
+    </section>
+
+    <script>
+        function printData(){
+            var jenisInput = document.getElementById('jenisBangunan').value
+            var ukuranInput = document.getElementById('ukuran').value
+
+            if(jenisInput == 1){
+                var str = ''
+                for(var i = 0; i < ukuranInput; i++){
+                    for(var j = 0; j < ukuranInput; j++){
+                        str += '*'
+                    }
+                str += '\n'
+                } 
+                
+                // alert(str)
+                document.getElementById('hasil').innerHTML = str
+
+            } else if(jenisInput == 2){
+                var str = ''
+                for(var i = 0; i < ukuranInput; i++){
+                    for(var j = 0; j <= i; j++){
+                        str += '*'
+                    }
+                str += '\n'
+                }
+                // alert(str)
+                document.getElementById('hasil').innerHTML = str
+            } else if(jenisInput == 3){
+                var str = ''
+                for(var i = 0; i < ukuranInput; i++){
+                    for(var j = i; j >= ukuranInput; j--){
+                        str += '*'
+                    }
+                str += '\n'
+                }
+                alert(str)
+                // document.getElementById('hasil').innerHTML = str
+            }
+        }
+    </script>
+</body>
+</html>
